@@ -25,6 +25,13 @@
         <RadioButton Content="4" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="200,70,0,0"/>
         <RadioButton Content="5" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="240,70,0,0"/>
         <RadioButton Content="6" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="280,70,0,0"/>
+        <ListBox x:Name="myListBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10" Grid.Row="1" Width="100" Height="105">
+            <ListBoxItem Content="1"/>
+            <ListBoxItem Content="2"/>
+            <ListBoxItem Content="3"/>
+            <ListBoxItem Content="4"/>
+            <ListBoxItem Content="5"/>
+        </ListBox>
 
 
     </Grid>
