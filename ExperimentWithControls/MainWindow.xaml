@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ExperimentWithControls"
         mc:Ignorable="d"
         Title="Experiment With Controls" Height="450" Width="800">
-    <Grid>
+    <Grid Margin="0,2,0,-2">
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
@@ -16,16 +16,21 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
+        
         <Label Content="Enter a number" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18"/>
+        
         <TextBlock x:Name="number" HorizontalAlignment="Center" TextWrapping="Wrap" Text="#" VerticalAlignment="Center" FontSize="24" Grid.Column="1"/>
+        
         <TextBox x:Name="numberTextBox"  HorizontalAlignment="Left" Margin="10,49,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" FontSize="18" TextChanged="numberTextBox_TextChanged" PreviewTextInput="numberTextBox_PreviewTextInput"/>
-        <RadioButton Content="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="200,50,0,0"/>
-        <RadioButton Content="2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="240,50,0,0"/>
-        <RadioButton Content="3" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="280,50,0,0"/>
-        <RadioButton Content="4" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="200,70,0,0"/>
-        <RadioButton Content="5" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="240,70,0,0"/>
-        <RadioButton Content="6" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="280,70,0,0"/>
-        <ListBox x:Name="myListBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10" Grid.Row="1" Width="100" Height="105">
+        
+        <RadioButton Content="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="200,50,0,0" Checked="RadioButton_Checked"/>
+        <RadioButton Content="2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="240,50,0,0" Checked="RadioButton_Checked"/>
+        <RadioButton Content="3" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="280,50,0,0" Checked="RadioButton_Checked"/>
+        <RadioButton Content="4" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="200,70,0,0" Checked="RadioButton_Checked"/>
+        <RadioButton Content="5" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="240,70,0,0" Checked="RadioButton_Checked"/>
+        <RadioButton Content="6" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="280,70,0,0" Checked="RadioButton_Checked"/>
+        
+        <ListBox x:Name="myListBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10" Grid.Row="1" Width="100" Height="105" SelectionChanged="myListBox_SelectionChanged">
             <ListBoxItem Content="1"/>
             <ListBoxItem Content="2"/>
             <ListBoxItem Content="3"/>
@@ -33,6 +38,21 @@
             <ListBoxItem Content="5"/>
         </ListBox>
 
+        <ComboBox x:Name="readOnlyComboBox" Grid.Column="1" Margin="10,10,0,0" Grid.Row="1" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" SelectionChanged="readOnlyComboBox_SelectionChanged">
+            <ListBoxItem Content="1"/>
+            <ListBoxItem Content="2"/>
+            <ListBoxItem Content="3"/>
+            <ListBoxItem Content="4"/>
+            <ListBoxItem Content="5"/>
+        </ComboBox>
+
+        <ComboBox x:Name="editableComboBox" Grid.Column="1" Margin="270,10,0,0" Grid.Row="1" IsEditable="True" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top" PreviewTextInput="numberTextBox_PreviewTextInput" TextBoxBase.TextChanged="editableComboBox_TextChanged">
+            <ListBoxItem Content="1"/>
+            <ListBoxItem Content="2"/>
+            <ListBoxItem Content="3"/>
+            <ListBoxItem Content="4"/>
+            <ListBoxItem Content="5"/>
+        </ComboBox>
 
     </Grid>
 </Window>
